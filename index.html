@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maré Alta Links</title>
+<meta name="description" content="Imóveis de temporada em Maceió e no litoral de Alagoas, com reserva pelo Airbnb e pela Booking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --deep:#0F2C3D;
+  --deep-2:#163A4E;
+  --sea:#2E7D86;
+  --shallow:#6FB7BD;
+  --sun:#E0A44A;
+  --sand:#EFE6D8;
+  --foam:#FBF8F3;
+  --line:#E3DACB;
+  --muted:#4A5D68;
+  --card:#FFFFFF;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--foam);
+  color:var(--deep);
+  font-family:Manrope,system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.45;
+}
+a{color:inherit}
+.hero{
+  background:var(--deep);
+  color:var(--foam);
+  padding:40px 16px 0;
+  position:relative;
+  overflow:hidden;
+}
+.hero-inner{max-width:480px;margin:0 auto;text-align:center;padding-bottom:64px}
+.mark{width:84px;height:84px;display:block;margin:0 auto 18px}
+.name{font-family:Sora,sans-serif;font-weight:600;font-size:36px;line-height:1;letter-spacing:-0.02em;margin:0}
+.tag{font-weight:700;font-size:12px;letter-spacing:0.3em;color:var(--shallow);margin-top:12px}
+.lead{margin:20px auto 0;max-width:340px;color:#D9E6E8;font-size:15px}
+.wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:44px;display:block}
+main{max-width:480px;margin:0 auto;padding:8px 16px 40px}
+.label{
+  font-weight:700;font-size:12px;letter-spacing:0.24em;color:var(--sea);
+  margin:28px 4px 12px;text-transform:uppercase;
+}
+.group{
+  background:var(--card);
+  border-radius:20px;
+  box-shadow:0 0 0 1px var(--line);
+  padding:18px 16px 8px;
+  margin-bottom:14px;
+}
+.group-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:0 4px 10px}
+.group-title{font-family:Sora,sans-serif;font-weight:600;font-size:20px;line-height:1.2;margin:0}
+.group-place{color:var(--muted);font-size:14px;margin-top:4px}
+.chip{
+  flex-shrink:0;font-weight:700;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+  background:var(--sand);color:var(--deep);border-radius:999px;padding:6px 10px;white-space:nowrap;
+}
+.chip.sea{background:var(--deep);color:var(--foam)}
+.unit{border-top:1px solid var(--line);padding:14px 4px}
+.unit-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.unit-name{font-weight:700;font-size:16px}
+.status{font-size:12px;font-weight:700;color:var(--sea)}
+.status.soon{color:var(--muted)}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{
+  flex:1 1 130px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:48px;padding:12px 14px;border-radius:14px;
+  text-decoration:none;font-weight:700;font-size:15px;
+  background:var(--deep);color:var(--foam);
+  transition:transform .12s ease, background .12s ease;
+}
+.btn:hover{background:var(--deep-2)}
+.btn:active{transform:scale(0.98)}
+.btn.alt{background:var(--sand);color:var(--deep)}
+.btn.alt:hover{background:#E6DBC9}
+.btn.off{flex-direction:column;gap:0;line-height:1.15;background:var(--foam);color:var(--muted);box-shadow:inset 0 0 0 1px var(--line);font-weight:600;font-size:14px;cursor:default}
+.btn.off:hover{background:var(--foam)}
+.btn.off small{font-size:12px;font-weight:600;color:var(--sea)}
+.btn:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.btn .arrow{opacity:.7;font-weight:600}
+.soon-box{
+  border-radius:14px;background:var(--foam);box-shadow:inset 0 0 0 1px var(--line);
+  color:var(--muted);font-size:14px;padding:12px 14px;text-align:center;
+}
+.owner{
+  background:var(--sand);
+  border-radius:20px;
+  padding:22px 20px;
+  margin-top:28px;
+}
+.owner h2{font-family:Sora,sans-serif;font-weight:600;font-size:22px;line-height:1.2;margin:0 0 8px}
+.owner p{margin:0 0 16px;color:var(--muted);font-size:15px}
+.owner .btn{background:var(--sun);color:var(--deep);width:100%}
+.owner .btn:hover{background:#D6973A}
+footer{
+  max-width:480px;margin:0 auto;padding:8px 16px 40px;text-align:center;
+  color:var(--muted);font-size:13px;
+}
+footer .ig{font-weight:700;color:var(--sea);text-decoration:none}
+footer .creci{margin-top:6px;font-weight:600;color:var(--deep)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <svg class="mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Símbolo Maré Alta">
+      <defs><clipPath id="c"><circle cx="60" cy="60" r="58"/></clipPath></defs>
+      <g clip-path="url(#c)">
+        <rect width="120" height="120" fill="#163A4E"/>
+        <circle cx="60" cy="56" r="17" fill="#E0A44A"/>
+        <path d="M0 64 q11 -9 22 0 t22 0 t22 0 t22 0 t22 0 t22 0 L132 120 L0 120 Z" fill="#163A4E"/>
+        <path d="M0 64 q11 -9 22 0 t22 0 t22 0 t22 0 t22 0 t22 0" fill="none" stroke="#FBF8F3" stroke-width="5" stroke-linecap="round"/>
+        <path d="M-11 82 q11 -9 22 0 t22 0 t22 0 t22 0 t22 0 t22 0" fill="none" stroke="#6FB7BD" stroke-width="5" stroke-linecap="round"/>
+        <path d="M0 100 q11 -9 22 0 t22 0 t22 0 t22 0 t22 0 t22 0" fill="none" stroke="#2E7D86" stroke-width="5" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <h1 class="name">Maré Alta</h1>
+    <div class="tag">GESTÃO DE TEMPORADA</div>
+    <p class="lead">Imóveis selecionados em Maceió e no litoral de Alagoas, a maioria de frente para a praia.</p>
+  </div>
+  <svg class="wave" viewBox="0 0 400 44" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 20 q25 -14 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0" fill="none" stroke="#6FB7BD" stroke-width="3"/>
+    <path d="M-25 30 q25 -14 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 L425 44 L-25 44 Z" fill="#FBF8F3"/>
+  </svg>
+</header>
+
+<main>
+  <div class="label">Reserve a sua estadia</div>
+
+  <section class="group" aria-labelledby="g-newtime">
+    <div class="group-head">
+      <div>
+        <h2 class="group-title" id="g-newtime">New Time</h2>
+        <div class="group-place">Pajuçara, Maceió</div>
+      </div>
+      <span class="chip sea">Frente mar</span>
+    </div>
+
+    <div class="unit">
+      <div class="unit-top"><span class="unit-name">Studio 1303</span></div>
+      <div class="btns">
+        <a class="btn" href="https://www.airbnb.com.br/rooms/1506108138242549275" target="_blank" rel="noopener">Airbnb <span class="arrow">↗</span></a>
+        <a class="btn alt" href="https://www.booking.com/hotel/br/new-time-apto-1303.pt-br.html" target="_blank" rel="noopener">Booking <span class="arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="unit">
+      <div class="unit-top"><span class="unit-name">Studio 1304</span></div>
+      <div class="btns">
+        <a class="btn" href="https://www.airbnb.com.br/rooms/1782671413782586807" target="_blank" rel="noopener">Airbnb <span class="arrow">↗</span></a>
+        <span class="btn off" aria-disabled="true">Booking<small>abre 09/10</small></span>
+      </div>
+    </div>
+
+    <div class="unit">
+      <div class="unit-top"><span class="unit-name">Studio 1302</span><span class="status soon">Em breve</span></div>
+      <div class="soon-box">Abre em breve. Acompanhe pelo Instagram.</div>
+    </div>
+  </section>
+
+  <section class="group" aria-labelledby="g-loft">
+    <div class="group-head">
+      <div>
+        <h2 class="group-title" id="g-loft">Loft Residence</h2>
+        <div class="group-place">Cruz das Almas, Maceió</div>
+      </div>
+      <span class="chip sea">Frente mar</span>
+    </div>
+
+    <div class="unit">
+      <div class="unit-top"><span class="unit-name">Studio 607</span></div>
+      <div class="btns">
+        <a class="btn" href="https://www.airbnb.com.br/rooms/1719587680183543039" target="_blank" rel="noopener">Airbnb <span class="arrow">↗</span></a>
+        <a class="btn alt" href="https://www.booking.com/hotel/br/studio-vista-mar-com-piscina-cruz-das-almas.pt-br.html" target="_blank" rel="noopener">Booking <span class="arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="unit">
+      <div class="unit-top"><span class="unit-name">Studio 807</span></div>
+      <div class="btns">
+        <a class="btn" href="https://www.airbnb.com.br/rooms/1720328159685594248" target="_blank" rel="noopener">Airbnb <span class="arrow">↗</span></a>
+        <a class="btn alt" href="https://www.booking.com/hotel/br/studio-vista-mar-com-piscina-cruz-das-almas-maceio.pt-br.html" target="_blank" rel="noopener">Booking <span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="group" aria-labelledby="g-iloa">
+    <div class="group-head">
+      <div>
+        <h2 class="group-title" id="g-iloa">ILOA Resort</h2>
+        <div class="group-place">Barra de São Miguel</div>
+      </div>
+      <span class="chip">Resort</span>
+    </div>
+
+    <div class="unit">
+      <div class="unit-top"><span class="unit-name">Apartamento 3 quartos</span></div>
+      <div class="btns">
+        <a class="btn" href="https://www.airbnb.com.br/rooms/1517411425448491825" target="_blank" rel="noopener">Airbnb <span class="arrow">↗</span></a>
+        <span class="btn off" aria-disabled="true">Booking<small>em breve</small></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="owner" aria-labelledby="g-owner">
+    <h2 id="g-owner">Tem um imóvel na praia?</h2>
+    <p>Cuidamos do anúncio, do hóspede e da prestação de contas. Fale com a gente pelo Direct.</p>
+    <a class="btn" href="https://ig.me/m/marealta.stays" target="_blank" rel="noopener">Chamar no Direct <span class="arrow">↗</span></a>
+  </section>
+</main>
+
+<footer>
+  <a class="ig" href="https://www.instagram.com/marealta.stays/" target="_blank" rel="noopener">@marealta.stays</a>
+  <div class="creci">CRECI 7883</div>
+</footer>
+
+</body>
+</html>
