@@ -2,12 +2,23 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Maré Alta Links</title>
-<meta name="description" content="Imóveis de temporada em Maceió e no litoral de Alagoas, com reserva pelo Airbnb e pela Booking.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maré Alta · Gestão de Temporada</title>
+<meta name="description" content="Imóveis de temporada em Maceió e no litoral de Alagoas, quase todos de frente para a praia. Reserva pelo Airbnb e pela Booking.">
+<meta name="theme-color" content="#0F2C3D">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Maré Alta · Gestão de Temporada">
+<meta property="og:description" content="Imóveis selecionados em Maceió e no litoral de Alagoas. Reserve pelo Airbnb ou pela Booking.">
+<meta property="og:image" content="https://thiagovilelaaluguel.github.io/marealta/img/og.jpg">
+<meta property="og:url" content="https://thiagovilelaaluguel.github.io/marealta/">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icone-32.png">
+<link rel="apple-touch-icon" href="img/icone-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.jpg">
 <style>
 :root{
   color-scheme: light;
@@ -21,56 +32,79 @@
   --line:#E3DACB;
   --muted:#4A5D68;
   --card:#FFFFFF;
+  --wa:#1F8A5B;
+  --radius:20px;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:64px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
   margin:0;
   background:var(--foam);
   color:var(--deep);
   font-family:Manrope,system-ui,sans-serif;
   font-size:16px;
-  line-height:1.45;
+  line-height:1.5;
 }
 a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:520px;margin:0 auto;padding:0 16px}
+
+/* ---------- Topo com foto ---------- */
 .hero{
-  background:var(--deep);
-  color:var(--foam);
-  padding:40px 16px 0;
   position:relative;
+  color:var(--foam);
+  background:var(--deep) url("img/hero.jpg") center 40%/cover no-repeat;
   overflow:hidden;
 }
-.hero-inner{max-width:480px;margin:0 auto;text-align:center;padding-bottom:64px}
-.mark{width:84px;height:84px;display:block;margin:0 auto 18px}
-.name{font-family:Sora,sans-serif;font-weight:600;font-size:36px;line-height:1;letter-spacing:-0.02em;margin:0}
-.tag{font-weight:700;font-size:12px;letter-spacing:0.3em;color:var(--shallow);margin-top:12px}
-.lead{margin:20px auto 0;max-width:340px;color:#D9E6E8;font-size:15px}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(15,44,61,.55) 0%,rgba(15,44,61,.35) 35%,rgba(15,44,61,.88) 78%,var(--deep) 100%);
+}
+.hero-inner{position:relative;max-width:520px;margin:0 auto;padding:56px 16px 84px;text-align:center}
+.mark{width:76px;height:76px;margin:0 auto 16px;border-radius:50%;box-shadow:0 0 0 3px rgba(251,248,243,.18)}
+.name{font-family:Sora,sans-serif;font-weight:600;font-size:40px;line-height:1;letter-spacing:-0.02em;margin:0}
+.tag{font-weight:800;font-size:12px;letter-spacing:0.3em;color:var(--shallow);margin-top:12px}
+.lead{margin:22px auto 0;max-width:360px;color:#E4EEEF;font-size:16px}
+.places{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:18px}
+.places span{
+  font-size:12px;font-weight:700;letter-spacing:.04em;
+  background:rgba(251,248,243,.12);border:1px solid rgba(251,248,243,.22);
+  border-radius:999px;padding:5px 11px;color:var(--foam);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+}
 .wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:44px;display:block}
-main{max-width:480px;margin:0 auto;padding:8px 16px 40px}
+
+/* ---------- Atalhos ---------- */
+.jump{
+  position:sticky;top:0;z-index:10;
+  background:rgba(251,248,243,.92);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;
+}
+.jump.stuck{border-bottom-color:var(--line)}
+.jump-row{
+  max-width:520px;margin:0 auto;padding:10px 16px;
+  display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;
+}
+.jump-row::-webkit-scrollbar{display:none}
+.jump a{
+  flex-shrink:0;text-decoration:none;font-weight:700;font-size:13px;
+  padding:8px 13px;border-radius:999px;background:var(--card);
+  box-shadow:inset 0 0 0 1px var(--line);color:var(--deep);white-space:nowrap;
+}
+.jump a:hover{background:var(--sand)}
+.jump a.hl{background:var(--deep);color:var(--foam);box-shadow:none}
+
+/* ---------- Títulos de seção ---------- */
 .label{
-  font-weight:700;font-size:12px;letter-spacing:0.24em;color:var(--sea);
-  margin:28px 4px 12px;text-transform:uppercase;
+  font-weight:800;font-size:12px;letter-spacing:0.24em;color:var(--sea);
+  margin:36px 4px 12px;text-transform:uppercase;
 }
-.group{
-  background:var(--card);
-  border-radius:20px;
-  box-shadow:0 0 0 1px var(--line);
-  padding:18px 16px 8px;
-  margin-bottom:14px;
-}
-.group-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:0 4px 10px}
-.group-title{font-family:Sora,sans-serif;font-weight:600;font-size:20px;line-height:1.2;margin:0}
-.group-place{color:var(--muted);font-size:14px;margin-top:4px}
-.chip{
-  flex-shrink:0;font-weight:700;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
-  background:var(--sand);color:var(--deep);border-radius:999px;padding:6px 10px;white-space:nowrap;
-}
-.chip.sea{background:var(--deep);color:var(--foam)}
-.unit{border-top:1px solid var(--line);padding:14px 4px}
-.unit-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
-.unit-name{font-weight:700;font-size:16px}
-.status{font-size:12px;font-weight:700;color:var(--sea)}
-.status.soon{color:var(--muted)}
+.h2{font-family:Sora,sans-serif;font-weight:600;font-size:24px;line-height:1.2;letter-spacing:-0.01em;margin:0 4px 6px}
+.sub{color:var(--muted);font-size:15px;margin:0 4px 16px}
+
+/* ---------- Botões ---------- */
 .btns{display:flex;gap:8px;flex-wrap:wrap}
 .btn{
   flex:1 1 130px;
@@ -82,44 +116,138 @@ main{max-width:480px;margin:0 auto;padding:8px 16px 40px}
 }
 .btn:hover{background:var(--deep-2)}
 .btn:active{transform:scale(0.98)}
+.btn:focus-visible,.jump a:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
 .btn.alt{background:var(--sand);color:var(--deep)}
 .btn.alt:hover{background:#E6DBC9}
+.btn .arrow{opacity:.7;font-weight:600}
 .btn.off{flex-direction:column;gap:0;line-height:1.15;background:var(--foam);color:var(--muted);box-shadow:inset 0 0 0 1px var(--line);font-weight:600;font-size:14px;cursor:default}
 .btn.off:hover{background:var(--foam)}
-.btn.off small{font-size:12px;font-weight:600;color:var(--sea)}
-.wa{max-width:480px;margin:0 auto;padding:4px 16px 0}
-.wa-card{background:var(--card);border-radius:20px;box-shadow:0 0 0 1px var(--line);padding:18px 16px 16px}
-.wa-title{font-family:Sora,sans-serif;font-weight:600;font-size:20px;margin:0 4px 4px}
+.btn.off:active{transform:none}
+.btn.off small{font-size:12px;font-weight:700;color:var(--sea)}
+.ico{width:22px;height:22px;flex-shrink:0}
+
+/* ---------- WhatsApp ---------- */
+.wa-card{
+  background:var(--card);border-radius:var(--radius);box-shadow:0 0 0 1px var(--line),0 12px 30px -18px rgba(15,44,61,.35);
+  padding:18px 16px 16px;margin-top:-36px;position:relative;
+}
+.wa-title{font-family:Sora,sans-serif;font-weight:600;font-size:20px;margin:0 4px 2px}
 .wa-sub{color:var(--muted);font-size:14px;margin:0 4px 14px}
-.btn.wa-btn{background:#1F8A5B;color:#fff;flex:1 1 100%;justify-content:flex-start;gap:12px;padding:12px 16px;text-align:left}
+.btn.wa{background:var(--wa);color:#fff;flex:1 1 100%;justify-content:flex-start;gap:12px;padding:12px 16px;text-align:left}
+.btn.wa:hover{background:#18744C}
 .wa-text{display:flex;flex-direction:column;line-height:1.25}
-.btn.wa-btn:hover{background:#18744C}
-.btn.wa-btn small{font-weight:600;font-size:12px;opacity:.85}
-.wa-ico{width:22px;height:22px;flex-shrink:0}
-.owner .wa-ico{width:18px;height:18px}
-.wa-row{display:flex;align-items:center;gap:8px}
-.btn:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
-.btn .arrow{opacity:.7;font-weight:600}
+.btn small{font-weight:600;font-size:12px;opacity:.85}
+
+/* ---------- Cartões dos imóveis ---------- */
+.prop{
+  background:var(--card);border-radius:var(--radius);
+  box-shadow:0 0 0 1px var(--line);overflow:hidden;margin-bottom:16px;
+}
+.photo{position:relative;aspect-ratio:16/10;background:var(--sand)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo .chip{position:absolute;top:12px;left:12px}
+.chip{
+  font-weight:800;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+  background:var(--foam);color:var(--deep);border-radius:999px;padding:6px 10px;white-space:nowrap;
+  box-shadow:0 2px 10px rgba(15,44,61,.18);
+}
+.chip.sea{background:var(--deep);color:var(--foam)}
+.prop-body{padding:16px 16px 6px}
+.prop-title{font-family:Sora,sans-serif;font-weight:600;font-size:21px;line-height:1.2;margin:0}
+.prop-place{color:var(--muted);font-size:14px;margin-top:3px}
+.prop-note{color:var(--muted);font-size:14px;margin:10px 0 0}
+.unit{border-top:1px solid var(--line);padding:14px 16px}
+.unit:first-of-type{margin-top:12px}
+.unit-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.unit-name{font-weight:800;font-size:16px}
+.status{font-size:12px;font-weight:800;color:var(--sea)}
+.status.soon{color:var(--muted)}
 .soon-box{
   border-radius:14px;background:var(--foam);box-shadow:inset 0 0 0 1px var(--line);
   color:var(--muted);font-size:14px;padding:12px 14px;text-align:center;
 }
-.owner{
-  background:var(--sand);
-  border-radius:20px;
-  padding:22px 20px;
-  margin-top:28px;
+.soon-box a{color:var(--sea);font-weight:700}
+.more{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  border-top:1px solid var(--line);padding:13px 16px;
+  text-decoration:none;font-weight:700;font-size:14px;color:var(--sea);
 }
-.owner h2{font-family:Sora,sans-serif;font-weight:600;font-size:22px;line-height:1.2;margin:0 0 8px}
-.owner p{margin:0 0 16px;color:var(--muted);font-size:15px}
+.more:hover{background:var(--foam)}
+
+/* ---------- Destaques do New Time ---------- */
+.rail{
+  display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
+  margin:0 -16px;padding:2px 16px 8px;scrollbar-width:none;
+  scroll-padding-left:16px;
+}
+.rail::-webkit-scrollbar{display:none}
+.tile{
+  position:relative;flex:0 0 62%;max-width:240px;aspect-ratio:4/5;
+  border-radius:18px;overflow:hidden;scroll-snap-align:start;background:var(--sand);margin:0;
+}
+.tile img{width:100%;height:100%;object-fit:cover}
+.tile figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:40px 14px 13px;
+  background:linear-gradient(180deg,rgba(15,44,61,0) 0%,rgba(15,44,61,.85) 100%);
+  color:var(--foam);font-weight:700;font-size:15px;line-height:1.25;
+}
+.tile figcaption small{display:block;font-weight:600;font-size:12px;color:var(--sand);opacity:.9;margin-top:2px}
+.tile .tag-paid{
+  position:absolute;top:10px;left:10px;right:10px;width:max-content;max-width:calc(100% - 20px);
+  background:var(--sun);color:var(--deep);font-size:11px;font-weight:800;line-height:1.2;
+  border-radius:8px;padding:5px 8px;
+}
+.rail-foot{display:flex;align-items:center;justify-content:space-between;margin:4px 4px 0}
+.hint{color:var(--muted);font-size:13px}
+.rail-nav{display:none;gap:6px}
+.rail-nav button{
+  width:38px;height:38px;border-radius:50%;border:0;cursor:pointer;
+  background:var(--card);box-shadow:inset 0 0 0 1px var(--line);color:var(--deep);
+  font:700 18px/1 Manrope,sans-serif;
+}
+.rail-nav button:hover{background:var(--sand)}
+@media (hover:hover) and (pointer:fine){.rail-nav{display:flex}}
+
+/* ---------- Sobre nós ---------- */
+.about{
+  background:var(--deep);color:var(--foam);border-radius:var(--radius);
+  padding:24px 20px;position:relative;overflow:hidden;
+}
+.about .label{color:var(--sun);margin:0 0 10px}
+.about h2{font-family:Sora,sans-serif;font-weight:600;font-size:23px;line-height:1.22;margin:0 0 10px}
+.about p{margin:0 0 12px;color:#D9E6E8;font-size:15px}
+.about p:last-of-type{margin-bottom:0}
+.about .waves{display:block;width:calc(100% + 40px);margin:18px -20px -24px;height:54px}
+.pillars{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px}
+.pillars li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--foam);font-weight:600}
+.pillars li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sun);margin-top:8px;flex-shrink:0}
+
+/* ---------- Proprietários ---------- */
+.owner{background:var(--sand);border-radius:var(--radius);padding:24px 20px 20px}
+.owner .label{color:#9A6A1F;margin:0 0 10px}
+.owner h2{font-family:Sora,sans-serif;font-weight:600;font-size:23px;line-height:1.22;margin:0 0 16px}
+.steps{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:10px}
+.steps li{
+  display:flex;gap:12px;align-items:center;background:var(--foam);border-radius:14px;
+  padding:12px 14px;font-weight:700;font-size:15px;
+}
+.steps .n{
+  width:30px;height:30px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;
+  background:var(--deep);color:var(--foam);font-family:Sora,sans-serif;font-size:14px;font-weight:600;
+}
 .owner .btn{background:var(--sun);color:var(--deep);width:100%}
 .owner .btn:hover{background:#D6973A}
-footer{
-  max-width:480px;margin:0 auto;padding:8px 16px 40px;text-align:center;
-  color:var(--muted);font-size:13px;
+
+/* ---------- Rodapé ---------- */
+footer{text-align:center;color:var(--muted);font-size:13px;padding:36px 16px 44px}
+footer .ig{
+  display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--sea);text-decoration:none;
+  font-size:15px;padding:10px 16px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);background:var(--card);
 }
-footer .ig{font-weight:700;color:var(--sea);text-decoration:none}
-footer .creci{margin-top:6px;font-weight:600;color:var(--deep)}
+footer .ig:hover{background:var(--sand)}
+footer .ig svg{width:18px;height:18px}
+footer .creci{margin-top:14px;font-weight:700;color:var(--deep)}
+footer .fine{margin-top:4px}
 </style>
 </head>
 <body>
@@ -127,11 +255,11 @@ footer .creci{margin-top:6px;font-weight:600;color:var(--deep)}
 <header class="hero">
   <div class="hero-inner">
     <svg class="mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Símbolo Maré Alta">
-      <defs><clipPath id="c"><circle cx="60" cy="60" r="58"/></clipPath></defs>
+      <defs><clipPath id="c"><circle cx="60" cy="60" r="60"/></clipPath></defs>
       <g clip-path="url(#c)">
-        <rect width="120" height="120" fill="#163A4E"/>
+        <rect width="120" height="120" fill="#0F2C3D"/>
         <circle cx="60" cy="56" r="17" fill="#E0A44A"/>
-        <path d="M0 64 q11 -9 22 0 t22 0 t22 0 t22 0 t22 0 t22 0 L132 120 L0 120 Z" fill="#163A4E"/>
+        <path d="M0 64 q11 -9 22 0 t22 0 t22 0 t22 0 t22 0 t22 0 L132 120 L0 120 Z" fill="#0F2C3D"/>
         <path d="M0 64 q11 -9 22 0 t22 0 t22 0 t22 0 t22 0 t22 0" fill="none" stroke="#FBF8F3" stroke-width="5" stroke-linecap="round"/>
         <path d="M-11 82 q11 -9 22 0 t22 0 t22 0 t22 0 t22 0 t22 0" fill="none" stroke="#6FB7BD" stroke-width="5" stroke-linecap="round"/>
         <path d="M0 100 q11 -9 22 0 t22 0 t22 0 t22 0 t22 0 t22 0" fill="none" stroke="#2E7D86" stroke-width="5" stroke-linecap="round"/>
@@ -139,7 +267,8 @@ footer .creci{margin-top:6px;font-weight:600;color:var(--deep)}
     </svg>
     <h1 class="name">Maré Alta</h1>
     <div class="tag">GESTÃO DE TEMPORADA</div>
-    <p class="lead">Imóveis selecionados em Maceió e no litoral de Alagoas, a maioria de frente para a praia.</p>
+    <p class="lead">Imóveis selecionados em Maceió e no litoral de Alagoas, quase todos de frente para a praia.</p>
+    <div class="places" aria-label="Onde estamos"><span>Pajuçara</span><span>Cruz das Almas</span><span>Barra de São Miguel</span></div>
   </div>
   <svg class="wave" viewBox="0 0 400 44" preserveAspectRatio="none" aria-hidden="true">
     <path d="M0 20 q25 -14 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0" fill="none" stroke="#6FB7BD" stroke-width="3"/>
@@ -147,31 +276,44 @@ footer .creci{margin-top:6px;font-weight:600;color:var(--deep)}
   </svg>
 </header>
 
-<section class="wa" aria-labelledby="g-wa">
-  <div class="wa-card">
+<div class="wrap">
+  <section class="wa-card" aria-labelledby="g-wa">
     <h2 class="wa-title" id="g-wa">Fale com a gente</h2>
     <p class="wa-sub">Atendimento direto pelo WhatsApp.</p>
     <div class="btns">
-      <a class="btn wa-btn" href="https://wa.me/5582996196123?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Mar%C3%A9%20Alta%20e%20quero%20me%20hospedar.%20Gostaria%20de%20consultar%20disponibilidade%20e%20valores." target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3z"/></svg><span class="wa-text">Quero me hospedar<small>Dúvidas, datas e valores</small></span></a>
-      <a class="btn wa-btn" href="https://wa.me/5582996196123?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Mar%C3%A9%20Alta.%20Tenho%20um%20im%C3%B3vel%20e%20gostaria%20de%20saber%20como%20funciona%20a%20administra%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3z"/></svg><span class="wa-text">Tenho um imóvel para administrar<small>Quero saber como funciona</small></span></a>
+      <a class="btn wa" href="https://wa.me/5582996196123?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Mar%C3%A9%20Alta%20e%20quero%20me%20hospedar.%20Gostaria%20de%20consultar%20disponibilidade%20e%20valores." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3z"/></svg><span class="wa-text">Quero me hospedar<small>Dúvidas, datas e valores</small></span></a>
+      <a class="btn wa" href="https://wa.me/5582996196123?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Mar%C3%A9%20Alta.%20Tenho%20um%20im%C3%B3vel%20e%20gostaria%20de%20saber%20como%20funciona%20a%20administra%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3z"/></svg><span class="wa-text">Tenho um imóvel para administrar<small>Quero saber como funciona</small></span></a>
     </div>
+  </section>
+</div>
+
+<nav class="jump" aria-label="Atalhos">
+  <div class="jump-row">
+    <a href="#new-time">New Time</a>
+    <a href="#loft">Loft Residence</a>
+    <a href="#iloa">ILOA</a>
+    <a href="#destaques">O prédio</a>
+    <a href="#sobre">Sobre nós</a>
+    <a href="#proprietarios">Proprietários</a>
   </div>
-</section>
+</nav>
 
-<main>
-  <div class="label">Reserve a sua estadia</div>
+<main class="wrap">
+  <div class="label" style="margin-top:20px">Reserve a sua estadia</div>
 
-  <section class="group" aria-labelledby="g-newtime">
-    <div class="group-head">
-      <div>
-        <h2 class="group-title" id="g-newtime">New Time</h2>
-        <div class="group-place">Pajuçara, Maceió</div>
-      </div>
+  <!-- New Time -->
+  <article class="prop" id="new-time" aria-labelledby="t-newtime">
+    <div class="photo">
+      <img src="img/newtime.jpg" width="1000" height="625" alt="Studio no New Time: sala com sofá, cama de casal e cozinha com bancada">
       <span class="chip sea">Frente mar</span>
+    </div>
+    <div class="prop-body">
+      <h2 class="prop-title" id="t-newtime">New Time</h2>
+      <div class="prop-place">Pajuçara, Maceió</div>
     </div>
 
     <div class="unit">
-      <div class="unit-top"><span class="unit-name">Studio 1303</span></div>
+      <div class="unit-top"><span class="unit-name">Studio 1303</span><span class="status">Disponível</span></div>
       <div class="btns">
         <a class="btn" href="https://www.airbnb.com.br/rooms/1506108138242549275" target="_blank" rel="noopener">Airbnb <span class="arrow">↗</span></a>
         <a class="btn alt" href="https://www.booking.com/hotel/br/new-time-apto-1303.pt-br.html" target="_blank" rel="noopener">Booking <span class="arrow">↗</span></a>
@@ -179,7 +321,7 @@ footer .creci{margin-top:6px;font-weight:600;color:var(--deep)}
     </div>
 
     <div class="unit">
-      <div class="unit-top"><span class="unit-name">Studio 1304</span></div>
+      <div class="unit-top"><span class="unit-name">Studio 1304</span><span class="status">Disponível</span></div>
       <div class="btns">
         <a class="btn" href="https://www.airbnb.com.br/rooms/1782671413782586807" target="_blank" rel="noopener">Airbnb <span class="arrow">↗</span></a>
         <span class="btn off" aria-disabled="true">Booking<small>abre 09/10</small></span>
@@ -188,17 +330,21 @@ footer .creci{margin-top:6px;font-weight:600;color:var(--deep)}
 
     <div class="unit">
       <div class="unit-top"><span class="unit-name">Studio 1302</span><span class="status soon">Em breve</span></div>
-      <div class="soon-box">Abre em breve. Acompanhe pelo Instagram.</div>
+      <div class="soon-box">Abre em breve. Acompanhe pelo <a href="https://www.instagram.com/marealta.stays/" target="_blank" rel="noopener">Instagram</a>.</div>
     </div>
-  </section>
 
-  <section class="group" aria-labelledby="g-loft">
-    <div class="group-head">
-      <div>
-        <h2 class="group-title" id="g-loft">Loft Residence</h2>
-        <div class="group-place">Cruz das Almas, Maceió</div>
-      </div>
+    <a class="more" href="#destaques">Ver o que o prédio oferece <span aria-hidden="true">↓</span></a>
+  </article>
+
+  <!-- Loft Residence -->
+  <article class="prop" id="loft" aria-labelledby="t-loft">
+    <div class="photo">
+      <img src="img/loft.jpg" width="1000" height="625" loading="lazy" alt="Studio no Loft Residence: cama de casal diante de janelas amplas com vista para o mar">
       <span class="chip sea">Frente mar</span>
+    </div>
+    <div class="prop-body">
+      <h2 class="prop-title" id="t-loft">Loft Residence</h2>
+      <div class="prop-place">Cruz das Almas, Maceió</div>
     </div>
 
     <div class="unit">
@@ -216,15 +362,17 @@ footer .creci{margin-top:6px;font-weight:600;color:var(--deep)}
         <a class="btn alt" href="https://www.booking.com/hotel/br/studio-vista-mar-com-piscina-cruz-das-almas-maceio.pt-br.html" target="_blank" rel="noopener">Booking <span class="arrow">↗</span></a>
       </div>
     </div>
-  </section>
+  </article>
 
-  <section class="group" aria-labelledby="g-iloa">
-    <div class="group-head">
-      <div>
-        <h2 class="group-title" id="g-iloa">ILOA Resort</h2>
-        <div class="group-place">Barra de São Miguel</div>
-      </div>
+  <!-- ILOA -->
+  <article class="prop" id="iloa" aria-labelledby="t-iloa">
+    <div class="photo">
+      <img src="img/iloa.jpg" width="1000" height="625" loading="lazy" alt="Apartamento no ILOA: sala com varanda voltada para o jardim do resort">
       <span class="chip">Resort</span>
+    </div>
+    <div class="prop-body">
+      <h2 class="prop-title" id="t-iloa">ILOA Resort</h2>
+      <div class="prop-place">Barra de São Miguel</div>
     </div>
 
     <div class="unit">
@@ -234,19 +382,101 @@ footer .creci{margin-top:6px;font-weight:600;color:var(--deep)}
         <span class="btn off" aria-disabled="true">Booking<small>em breve</small></span>
       </div>
     </div>
+  </article>
+
+  <!-- Destaques do New Time -->
+  <section id="destaques" aria-labelledby="t-dest">
+    <div class="label">Destaques do New Time</div>
+    <h2 class="h2" id="t-dest">Muito além do studio</h2>
+    <p class="sub">Áreas comuns do prédio, na orla da Pajuçara.</p>
+
+    <div class="rail" id="rail" tabindex="0" aria-label="Fotos das áreas comuns do New Time">
+      <figure class="tile"><img src="img/nt-piscina.jpg" width="720" height="900" loading="lazy" alt="Piscina com vista para o mar"><figcaption>Piscina com vista para o mar</figcaption></figure>
+      <figure class="tile"><img src="img/nt-lounge.jpg" width="720" height="900" loading="lazy" alt="Lounge com sofás e o mar ao fundo"><figcaption>Lounge</figcaption></figure>
+      <figure class="tile"><img src="img/nt-por-do-sol.jpg" width="720" height="900" loading="lazy" alt="Pôr do sol visto do deck da piscina"><figcaption>Pôr do sol</figcaption></figure>
+      <figure class="tile"><img src="img/nt-academia.jpg" width="720" height="900" loading="lazy" alt="Academia com esteiras e vista para o mar"><figcaption>Academia</figcaption></figure>
+      <figure class="tile"><img src="img/nt-jogos.jpg" width="720" height="900" loading="lazy" alt="Salão de jogos com mesa de sinuca"><figcaption>Salão de jogos</figcaption></figure>
+      <figure class="tile"><img src="img/nt-brinquedoteca.jpg" width="720" height="900" loading="lazy" alt="Brinquedoteca com escorregador e piscina de bolinhas"><figcaption>Brinquedoteca</figcaption></figure>
+      <figure class="tile"><img src="img/nt-lobby.jpg" width="720" height="900" loading="lazy" alt="Lobby do prédio"><figcaption>Lobby</figcaption></figure>
+      <figure class="tile"><img src="img/nt-spa.jpg" width="720" height="900" loading="lazy" alt="Spa com banheira aquecida e vista"><span class="tag-paid">Uso à parte, cobrado pelo prédio</span><figcaption>Spa</figcaption></figure>
+      <figure class="tile"><img src="img/nt-pajucara.jpg" width="720" height="900" loading="lazy" alt="Piscinas naturais da Pajuçara com jangadas"><figcaption>Pajuçara<small>Piscinas naturais</small></figcaption></figure>
+    </div>
+    <div class="rail-foot">
+      <span class="hint">Deslize para ver mais →</span>
+      <div class="rail-nav">
+        <button type="button" data-dir="-1" aria-label="Fotos anteriores">‹</button>
+        <button type="button" data-dir="1" aria-label="Próximas fotos">›</button>
+      </div>
+    </div>
   </section>
 
-  <section class="owner" aria-labelledby="g-owner">
-    <h2 id="g-owner">Tem um imóvel na praia?</h2>
-    <p>Cuidamos do anúncio, do hóspede e da prestação de contas. Fale com a gente pelo WhatsApp.</p>
-    <a class="btn" href="https://wa.me/5582996196123?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Mar%C3%A9%20Alta.%20Tenho%20um%20im%C3%B3vel%20e%20gostaria%20de%20saber%20como%20funciona%20a%20administra%C3%A7%C3%A3o." target="_blank" rel="noopener"><span class="wa-row"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3z"/></svg>Falar no WhatsApp</span></a>
+  <!-- Sobre nós -->
+  <section class="about" id="sobre" aria-labelledby="t-sobre" style="margin-top:36px">
+    <div class="label">Quem somos</div>
+    <h2 id="t-sobre">Gestão de imóveis por temporada em Maceió e no litoral de Alagoas</h2>
+    <p>Do anúncio ao check-out, cuidamos de cada detalhe. Hoje estamos na Pajuçara, em Cruz das Almas e na Barra de São Miguel. E a lista só cresce.</p>
+    <ul class="pillars">
+      <li>Do studio ao apartamento de 3 quartos</li>
+      <li>Limpeza profissional a cada estadia</li>
+      <li>Atendimento direto do início ao fim</li>
+      <li>Reservas pelo Airbnb e pela Booking</li>
+    </ul>
+    <svg class="waves" viewBox="0 0 400 54" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 14 q25 -12 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0" fill="none" stroke="#FBF8F3" stroke-width="3"/>
+      <path d="M-25 30 q25 -12 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0" fill="none" stroke="#6FB7BD" stroke-width="3"/>
+      <path d="M0 46 q25 -12 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0" fill="none" stroke="#2E7D86" stroke-width="3"/>
+    </svg>
+  </section>
+
+  <!-- Proprietários -->
+  <section class="owner" id="proprietarios" aria-labelledby="t-owner" style="margin-top:16px">
+    <div class="label">Para quem é proprietário</div>
+    <h2 id="t-owner">Seu imóvel rendendo, sem trabalho para você</h2>
+    <ol class="steps">
+      <li><span class="n">1</span>Anúncio no Airbnb e na Booking</li>
+      <li><span class="n">2</span>Preço ajustado a cada data</li>
+      <li><span class="n">3</span>Hóspedes, limpeza e enxoval</li>
+      <li><span class="n">4</span>Prestação de contas todo mês</li>
+    </ol>
+    <a class="btn" href="https://wa.me/5582996196123?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Mar%C3%A9%20Alta.%20Tenho%20um%20im%C3%B3vel%20e%20gostaria%20de%20saber%20como%20funciona%20a%20administra%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3z"/></svg>Quero saber como funciona</a>
   </section>
 </main>
 
 <footer>
-  <a class="ig" href="https://www.instagram.com/marealta.stays/" target="_blank" rel="noopener">@marealta.stays</a>
+  <a class="ig" href="https://www.instagram.com/marealta.stays/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm4.9-8.9a1.1 1.1 0 1 0 1.1 1.1 1.1 1.1 0 0 0-1.1-1.1zM21.9 7a6.4 6.4 0 0 0-1.8-4.1A6.4 6.4 0 0 0 16 1.1C14.4 1 9.6 1 8 1.1a6.4 6.4 0 0 0-4.1 1.8A6.4 6.4 0 0 0 2.1 7C2 8.6 2 15.4 2.1 17a6.4 6.4 0 0 0 1.8 4.1A6.4 6.4 0 0 0 8 22.9c1.6.1 6.4.1 8 0a6.4 6.4 0 0 0 4.1-1.8 6.4 6.4 0 0 0 1.8-4.1c.1-1.6.1-8.4 0-10zM19.8 19a3.3 3.3 0 0 1-1.8 1.8c-1.3.5-4.3.4-6 .4s-4.7.1-6-.4A3.3 3.3 0 0 1 4.2 19c-.5-1.3-.4-4.3-.4-6s-.1-4.7.4-6A3.3 3.3 0 0 1 6 5.2c1.3-.5 4.3-.4 6-.4s4.7-.1 6 .4A3.3 3.3 0 0 1 19.8 7c.5 1.3.4 4.3.4 6s.1 4.7-.4 6z"/></svg>@marealta.stays</a>
   <div class="creci">CRECI 7883</div>
+  <div class="fine">Maceió · Alagoas</div>
 </footer>
 
+<script>
+  // Atalhos: borda quando gruda no topo
+  (function(){
+    var nav=document.querySelector('.jump');
+    if(!('IntersectionObserver' in window)) return;
+    var s=document.createElement('div'); nav.parentNode.insertBefore(s,nav);
+    new IntersectionObserver(function(e){nav.classList.toggle('stuck',!e[0].isIntersecting)}).observe(s);
+    // Marca o atalho da seção que está na tela
+    var links={};
+    nav.querySelectorAll('a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+    var spy=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        for(var k in links) links[k].classList.toggle('hl',k===e.target.id);
+        var a=links[e.target.id], row=a.parentNode;
+        row.scrollTo({left:a.offsetLeft-16,behavior:'smooth'});
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(links).forEach(function(id){var el=document.getElementById(id); if(el) spy.observe(el)});
+  })();
+  // Setas da faixa de fotos (computador)
+  (function(){
+    var rail=document.getElementById('rail');
+    document.querySelectorAll('.rail-nav button').forEach(function(b){
+      b.addEventListener('click',function(){
+        rail.scrollBy({left:rail.clientWidth*0.8*Number(b.dataset.dir),behavior:'smooth'});
+      });
+    });
+  })();
+</script>
 </body>
 </html>
