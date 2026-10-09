@@ -397,3 +397,11 @@ p{margin:0}
 .dark .note{color:var(--muted-light)}
 .stack{display:grid;gap:18px}
 .mt-s{margin-top:12px}.mt-m{margin-top:24px}.mt-l{margin-top:40px}
+
+/* crédito de foto na capa e créditos no fim da página */
+.hero-credit{position:absolute;right:var(--gut);bottom:14px;z-index:1;font-size:11px;color:rgba(220,232,234,.75);letter-spacing:.02em}
+@media (min-width:880px){.hero-credit{bottom:18px}}
+.credits{border-top:1px solid var(--line);padding-top:18px;font-size:13px;color:var(--muted)}
+.credits summary{cursor:pointer;font-weight:700;color:var(--deep)}
+.credits p{margin-top:10px;line-height:1.7}
+.credits a{color:var(--sea)}
