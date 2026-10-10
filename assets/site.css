@@ -405,3 +405,48 @@ p{margin:0}
 .credits summary{cursor:pointer;font-weight:700;color:var(--deep)}
 .credits p{margin-top:10px;line-height:1.7}
 .credits a{color:var(--sea)}
+/* ---------- Avaliações ---------- */
+.scores{display:flex;flex-wrap:wrap;gap:10px}
+.score{
+  display:inline-flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);
+  border-radius:16px;padding:12px 16px 12px 14px;
+}
+.score b{font-family:Sora,sans-serif;font-weight:500;font-size:26px;letter-spacing:-0.02em;line-height:1}
+.score b small{font-size:13px;color:var(--muted);font-weight:400;letter-spacing:0}
+.score .star{color:var(--sun);font-size:18px;line-height:1}
+.score span{display:grid;font-size:13px;line-height:1.35;color:var(--muted)}
+.score span strong{color:var(--deep);font-size:14px}
+.dark .score{background:rgba(251,248,243,.06);border-color:var(--line-dark)}
+.dark .score span{color:var(--muted-light)}
+.dark .score span strong,.dark .score b{color:var(--foam)}
+.badge-fav{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--deep);background:var(--sand);border-radius:999px;padding:7px 12px}
+.badge-fav::before{content:"★";color:var(--sun);font-size:14px}
+.quotes{display:grid;gap:14px}
+@media (min-width:880px){.quotes{grid-template-columns:repeat(3,1fr);gap:18px}}
+.quote{
+  margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:26px 24px 22px;display:flex;flex-direction:column;gap:16px;position:relative;
+}
+.quote::before{content:"\201C";font-family:Sora,sans-serif;font-weight:300;font-size:64px;line-height:.6;color:var(--sun);height:22px}
+.quote blockquote{margin:0;font-size:16px;line-height:1.6;color:var(--deep)}
+.quote figcaption{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.quote figcaption b{color:var(--deep);font-size:14px}
+.quote .stars{color:var(--sun);letter-spacing:2px;font-size:13px}
+.dark .quote{background:rgba(251,248,243,.05);border-color:var(--line-dark)}
+.dark .quote blockquote{color:var(--foam)}
+.dark .quote figcaption{border-color:var(--line-dark);color:var(--muted-light)}
+.dark .quote figcaption b{color:var(--foam)}
+
+/* ---------- Perguntas frequentes ---------- */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:20px 2px;font-family:Sora,sans-serif;font-weight:500;font-size:18px;letter-spacing:-0.01em;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:Manrope,sans-serif;font-weight:400;font-size:26px;color:var(--sun);transition:transform .25s var(--ease);flex-shrink:0}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 2px 22px;color:var(--muted);max-width:720px}
+.dark .score .star,.score .star{color:var(--sun)}
+.dark .score b small{color:var(--muted-light)}
