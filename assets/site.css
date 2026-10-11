@@ -35,6 +35,7 @@ body{
   font-family:'Work Sans',system-ui,sans-serif;font-size:16px;line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
+*{font-feature-settings:'lnum' 1} /* Cormorant usa números antigos por padrão (1302 parece "I3o2") */
 img{display:block;max-width:100%}
 a{color:inherit}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:0;line-height:1.08;margin:0}
