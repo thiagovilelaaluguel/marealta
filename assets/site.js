@@ -1,4 +1,4 @@
-// Maré Alta · comportamento do site (cabeçalho, menu, fotos)
+// Notte Stays · comportamento do site (cabeçalho, menu, fotos)
 (function () {
   document.documentElement.classList.remove('no-js');
 
