@@ -2,6 +2,12 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": true,
+  "redirects": [
+    { "source": "/ir/booking-1303/", "destination": "https://www.booking.com/hotel/br/new-time-apto-1303.html", "permanent": false },
+    { "source": "/ir/booking-1304/", "destination": "https://www.booking.com/hotel/br/new-time-apto-1304.html", "permanent": false },
+    { "source": "/ir/booking-607/", "destination": "https://www.booking.com/hotel/br/studio-vista-mar-com-piscina-cruz-das-almas.html", "permanent": false },
+    { "source": "/ir/booking-807/", "destination": "https://www.booking.com/hotel/br/studio-vista-mar-com-piscina-cruz-das-almas-maceio.html", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/img/(.*)",
