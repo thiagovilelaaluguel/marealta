@@ -3,19 +3,45 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
-    { "source": "/ir/booking-1303/", "destination": "https://www.booking.com/hotel/br/new-time-apto-1303.html", "permanent": false },
-    { "source": "/ir/booking-1304/", "destination": "https://www.booking.com/hotel/br/new-time-apto-1304.html", "permanent": false },
-    { "source": "/ir/booking-607/", "destination": "https://www.booking.com/hotel/br/studio-vista-mar-com-piscina-cruz-das-almas.html", "permanent": false },
-    { "source": "/ir/booking-807/", "destination": "https://www.booking.com/hotel/br/studio-vista-mar-com-piscina-cruz-das-almas-maceio.html", "permanent": false }
+    {
+      "source": "/ir/booking-1303/",
+      "destination": "https://www.booking.com/Share-ze25Ftx",
+      "permanent": false
+    },
+    {
+      "source": "/ir/booking-1304/",
+      "destination": "https://www.booking.com/Share-KpXcRG",
+      "permanent": false
+    },
+    {
+      "source": "/ir/booking-607/",
+      "destination": "https://www.booking.com/Share-FtEYBA",
+      "permanent": false
+    },
+    {
+      "source": "/ir/booking-807/",
+      "destination": "https://www.booking.com/Share-lhzoql",
+      "permanent": false
+    }
   ],
   "headers": [
     {
       "source": "/img/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
     },
     {
       "source": "/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
     }
   ]
 }
