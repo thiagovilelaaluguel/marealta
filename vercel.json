@@ -2,46 +2,14 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": true,
-  "redirects": [
-    {
-      "source": "/ir/booking-1303/",
-      "destination": "https://www.booking.com/Hotel/br/new-time-apto-1303.pt-br.html",
-      "permanent": false
-    },
-    {
-      "source": "/ir/booking-1304/",
-      "destination": "https://www.booking.com/Hotel/br/new-time-apto-1304.pt-br.html",
-      "permanent": false
-    },
-    {
-      "source": "/ir/booking-607/",
-      "destination": "https://www.booking.com/Hotel/br/studio-vista-mar-com-piscina-cruz-das-almas.pt-br.html",
-      "permanent": false
-    },
-    {
-      "source": "/ir/booking-807/",
-      "destination": "https://www.booking.com/Hotel/br/studio-vista-mar-com-piscina-cruz-das-almas-maceio.pt-br.html",
-      "permanent": false
-    }
-  ],
   "headers": [
     {
       "source": "/img/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=604800"
-        }
-      ]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
     },
     {
       "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600"
-        }
-      ]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
     }
   ]
 }
