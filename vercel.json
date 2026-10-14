@@ -5,22 +5,22 @@
   "redirects": [
     {
       "source": "/ir/booking-1303/",
-      "destination": "https://www.booking.com/Share-ze25Ftx",
+      "destination": "https://www.booking.com/Hotel/br/new-time-apto-1303.pt-br.html",
       "permanent": false
     },
     {
       "source": "/ir/booking-1304/",
-      "destination": "https://www.booking.com/Share-KpXcRG",
+      "destination": "https://www.booking.com/Hotel/br/new-time-apto-1304.pt-br.html",
       "permanent": false
     },
     {
       "source": "/ir/booking-607/",
-      "destination": "https://www.booking.com/Share-FtEYBA",
+      "destination": "https://www.booking.com/Hotel/br/studio-vista-mar-com-piscina-cruz-das-almas.pt-br.html",
       "permanent": false
     },
     {
       "source": "/ir/booking-807/",
-      "destination": "https://www.booking.com/Share-lhzoql",
+      "destination": "https://www.booking.com/Hotel/br/studio-vista-mar-com-piscina-cruz-das-almas-maceio.pt-br.html",
       "permanent": false
     }
   ],
