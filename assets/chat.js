@@ -199,17 +199,17 @@
       a: {
         pt: {
           nt: 'Incluídos na estadia: piscina de borda infinita no rooftop (8h às 19h), academia (7h às 22h), salão de jogos, playground e brinquedoteca (8h às 20h). Pagos à parte, direto ao prédio: sauna e hidromassagem (9h às 21h; a hidromassagem precisa de agendamento), lavanderia e adega. Nas áreas comuns é obrigatório usar a pulseira do condomínio.',
-          loft: 'No condomínio: piscina com vista para o mar, academia, sauna, salão de jogos, lavanderia (paga à parte), espaço gourmet com churrasqueira e mercadinho.',
+          loft: 'No condomínio: piscina com vista para o mar, academia, lavanderia (paga à parte), espaço gourmet com churrasqueira e mercadinho.',
           iloa: 'No condomínio: piscinas (com área para as crianças), quadra de beach tennis, restaurante, conveniência 24 horas, segurança 24 horas e muita área verde.'
         },
         en: {
           nt: 'Included in your stay: rooftop infinity pool (8 a.m. to 7 p.m.), gym (7 a.m. to 10 p.m.), game room, playground and kids room (8 a.m. to 8 p.m.). Paid separately to the building: sauna and hot tub (9 a.m. to 9 p.m.; the hot tub needs booking), laundry and wine cellar. The building ID wristband is required in common areas.',
-          loft: 'In the building: sea-view pool, gym, sauna, game room, laundry (paid separately), barbecue area and mini market.',
+          loft: 'In the building: sea-view pool, gym, laundry (paid separately), barbecue area and mini market.',
           iloa: 'In the condo: pools (with a kids area), beach tennis court, restaurant, 24-hour convenience store, 24-hour security and lots of green space.'
         },
         es: {
           nt: 'Incluidos en la estadía: piscina infinita en el rooftop (8 a 19 h), gimnasio (7 a 22 h), sala de juegos, playground y juegoteca (8 a 20 h). Se pagan aparte, directo al edificio: sauna e hidromasaje (9 a 21 h; el hidromasaje requiere reserva), lavandería y cava de vinos. En las áreas comunes es obligatorio usar la pulsera del condominio.',
-          loft: 'En el edificio: piscina con vista al mar, gimnasio, sauna, sala de juegos, lavandería (paga aparte), quincho con parrilla y minimercado.',
+          loft: 'En el edificio: piscina con vista al mar, gimnasio, lavandería (paga aparte), quincho con parrilla y minimercado.',
           iloa: 'En el condominio: piscinas (con área para niños), cancha de beach tennis, restaurante, minimercado 24 horas, seguridad 24 horas y mucho verde.'
         }
       }
